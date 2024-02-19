@@ -32,24 +32,7 @@ with st.expander("Click for FAQ:"):
         5. High Blood Pressure
         6. General Health
         * Weight and Height get converted to BMI for use in the model.
-    * **How does this work?**
-        * Survey responses from the CDC's Behavioral Risk Factor Surveillance System were used to train a simple, easy to interpret machine learning model called a Decision Tree. [Code Source](https://www.kaggle.com/code/alexteboul/diabetes-risk-streamlit-app)
-        * Decision Trees work by creating a set of rules for making a prediction based on previously seen examples.
-        * In our case, the Decision Tree has learned to predict if someone is at risk of developing Type II Diabetes or already has Type II Diabetes.
-        * This app **DOES NOT PROVIDE A DIAGNOSIS**, it is simply meant as a **public awareness tool** to drive healthier habits and get those at risk of Type II Diabetes / those with prediabetes to seek the professional medical advice.
-    * **What is the Behavioral Risk Factor Surveillance System?**
-        * The Behavioral Risk Factor Surveillance System (BRFSS) is the nation’s premier system of health-related telephone surveys that collect state data about U.S. residents regarding their health-related risk behaviors, chronic health conditions, and use of preventive services.
-        * Established in 1984 with 15 states, BRFSS now collects data in all 50 states as well as the District of Columbia and three U.S. territories.
-        * BRFSS completes more than 400,000 adult interviews each year, making it the largest continuously conducted health survey system in the world.
-    * **How well does this machine learning model work?**
-        * Based over 115,000 survey responses used in the training and 5-fold cross validation of this model:
-        * Accuracy 70% (+/- 2%), Recall 75% (+/- 2%), Precision 69% (+/- 2%)
-        * The model was optimized for Recall (otherwise know as Sensitivity or True Positive Rate), because the aim of this tool is for public awareness where it is more important to capture as many potential positives as possible.
-    * **These metrics are promising, considering the following CDC estimates** - [Source](https://www.cdc.gov/diabetes/library/spotlights/diabetes-facts-stats.html):
-        * 37.3 million Americans — about 1 in 10 — have diabetes.
-            * About 1 in 5 people with diabetes don’t know they have it.
-        * 96 million American adults — more than 1 in 3 — have prediabetes.
-            * More than 8 in 10 adults with prediabetes don’t know they have it.
+    
     """)
 with st.expander("Click to see the Decision Tree:"):
     st.write("""This is how the Diabetes risk prediction is made by this app.""")
@@ -188,9 +171,4 @@ if st.button('Click here to predict your Type II Diabetes Risk'):
                  low_risk_proba, "%")
         st.write("Predicted probality of high-risk",
                  high_risk_proba, "%")
-        st.write(
-            "Consider taking the [CDC - Prediabetes Risk Test](https://www.cdc.gov/prediabetes/risktest/)")
-        st.write(
-            "Get started on your path to preventing type 2 diabetes here: [CDC - Path 2 Prevention](https://diabetespath2prevention.cdc.gov)")
-        st.write(
-            "Consider enrolling in the National Diabetes Prevention Program, through providers like: [Lark Health](https://www.lark.com).")
+
